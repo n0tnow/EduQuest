@@ -84,16 +84,24 @@ TEMPLATES = [
 WSGI_APPLICATION = 'eduquest_backend.wsgi.application'
 
 # Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('PGDATABASE'),
-        'USER': os.getenv('PGUSER'),
-        'PASSWORD': os.getenv('PGPASSWORD'),
-        'HOST': os.getenv('PGHOST'),
-        'PORT': os.getenv('PGPORT'),
+if os.getenv('RAILWAY_ENVIRONMENT') == 'production':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('PGDATABASE'),
+            'USER': os.getenv('PGUSER'),
+            'PASSWORD': os.getenv('PGPASSWORD'),
+            'HOST': os.getenv('PGHOST'),
+            'PORT': os.getenv('PGPORT'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -142,12 +150,18 @@ REST_FRAMEWORK = {
 
 PORT = int(os.getenv('PORT', 8000))
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "https://edu-quest-seven.vercel.app"
-]
+if os.getenv('RAILWAY_ENVIRONMENT') == 'production':
+    CORS_ALLOWED_ORIGINS = [
+        "https://edu-quest-seven.vercel.app"
+    ]
+    CORS_ALLOW_ALL_ORIGINS = False
+else:
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:3000",
+    ]
 
-CORS_ALLOW_ALL_ORIGINS = False  # Only for development
+CORS_ALLOW_ALL_ORIGINS = True  # Local development için
+  # Only for development
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_METHODS = [

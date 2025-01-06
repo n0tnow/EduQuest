@@ -14,8 +14,8 @@ import {
   Star,
   BookOpen
 } from 'lucide-react';
-import QuizModal from '../../pages/courses/QuizModal';
-import VideoPlayer from '../../pages/courses/VideoPlayer';
+import QuizModal from './QuizModal';
+import VideoPlayer from './VideoPlayer';
 
 const CourseDetail = () => {
   const router = useRouter();

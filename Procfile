@@ -1,1 +1,1 @@
-web: cd backend && python manage.py migrate && gunicorn eduquest.wsgi --log-file -
+web: gunicorn --chdir eduquest_backend eduquest_backend.wsgi:application
