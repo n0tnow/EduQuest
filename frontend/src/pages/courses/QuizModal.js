@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import { X, AlertCircle, CheckCircle, Trophy } from 'lucide-react';
 
-const QuizModal = ({ quiz, onClose, onSubmit }) => {
+const QuizModal = ({ quiz = {}, onClose, onSubmit }) => {
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
   const [score, setScore] = useState(0);
 
   const handleAnswer = (questionId, answerIndex) => {
-    setAnswers(prev => ({
+    setAnswers((prev) => ({
       ...prev,
-      [questionId]: answerIndex
+      [questionId]: answerIndex,
     }));
   };
 
   const calculateScore = () => {
+    if (!quiz.questions || quiz.questions.length === 0) return 0; // Güvenli erişim
     let correct = 0;
-    quiz.questions.forEach(question => {
+    quiz.questions.forEach((question) => {
       if (answers[question.id] === question.correctAnswer) {
         correct++;
       }
@@ -24,7 +25,7 @@ const QuizModal = ({ quiz, onClose, onSubmit }) => {
   };
 
   const handleSubmit = () => {
-    if (Object.keys(answers).length !== quiz.questions.length) {
+    if (!quiz.questions || Object.keys(answers).length !== quiz.questions.length) {
       alert('Please answer all questions');
       return;
     }
@@ -33,7 +34,7 @@ const QuizModal = ({ quiz, onClose, onSubmit }) => {
     setScore(finalScore);
     setShowResults(true);
 
-    if (finalScore >= quiz.requiredScore) {
+    if (finalScore >= (quiz.requiredScore || 0)) {
       onSubmit(answers, finalScore);
     }
   };
@@ -43,11 +44,8 @@ const QuizModal = ({ quiz, onClose, onSubmit }) => {
       <div className="bg-gray-800 rounded-xl p-6 max-w-2xl w-full m-4 max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-white">{quiz.title}</h2>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-white"
-          >
+          <h2 className="text-2xl font-bold text-white">{quiz.title || 'Quiz Title'}</h2>
+          <button onClick={onClose} className="text-gray-400 hover:text-white">
             <X className="h-6 w-6" />
           </button>
         </div>
@@ -56,34 +54,38 @@ const QuizModal = ({ quiz, onClose, onSubmit }) => {
           <>
             {/* Questions */}
             <div className="space-y-6">
-              {quiz.questions.map((question, qIndex) => (
-                <div key={question.id} className="bg-gray-700 rounded-lg p-4">
-                  <p className="text-white font-semibold mb-4">
-                    {qIndex + 1}. {question.question}
-                  </p>
-                  <div className="space-y-2">
-                    {question.options.map((option, index) => (
-                      <label
-                        key={index}
-                        className={`flex items-center p-3 rounded-lg cursor-pointer ${
-                          answers[question.id] === index
-                            ? 'bg-purple-600'
-                            : 'bg-gray-600 hover:bg-gray-500'
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name={question.id}
-                          checked={answers[question.id] === index}
-                          onChange={() => handleAnswer(question.id, index)}
-                          className="hidden"
-                        />
-                        <span className="text-white">{option}</span>
-                      </label>
-                    ))}
+              {quiz.questions && quiz.questions.length > 0 ? (
+                quiz.questions.map((question, qIndex) => (
+                  <div key={question.id} className="bg-gray-700 rounded-lg p-4">
+                    <p className="text-white font-semibold mb-4">
+                      {qIndex + 1}. {question.question}
+                    </p>
+                    <div className="space-y-2">
+                      {question.options.map((option, index) => (
+                        <label
+                          key={index}
+                          className={`flex items-center p-3 rounded-lg cursor-pointer ${
+                            answers[question.id] === index
+                              ? 'bg-purple-600'
+                              : 'bg-gray-600 hover:bg-gray-500'
+                          }`}
+                        >
+                          <input
+                            type="radio"
+                            name={question.id}
+                            checked={answers[question.id] === index}
+                            onChange={() => handleAnswer(question.id, index)}
+                            className="hidden"
+                          />
+                          <span className="text-white">{option}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))
+              ) : (
+                <p className="text-gray-400">No questions available for this quiz.</p>
+              )}
             </div>
 
             {/* Submit Button */}
@@ -99,28 +101,26 @@ const QuizModal = ({ quiz, onClose, onSubmit }) => {
         ) : (
           // Results View
           <div className="text-center">
-            <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full mb-6 ${
-              score >= quiz.requiredScore
-                ? 'bg-green-500/20'
-                : 'bg-red-500/20'
-            }`}>
-              {score >= quiz.requiredScore ? (
+            <div
+              className={`inline-flex items-center justify-center w-24 h-24 rounded-full mb-6 ${
+                score >= (quiz.requiredScore || 0) ? 'bg-green-500/20' : 'bg-red-500/20'
+              }`}
+            >
+              {score >= (quiz.requiredScore || 0) ? (
                 <Trophy className="h-12 w-12 text-green-500" />
               ) : (
                 <AlertCircle className="h-12 w-12 text-red-500" />
               )}
             </div>
 
-            <h3 className="text-2xl font-bold text-white mb-2">
-              Your Score: {score}%
-            </h3>
+            <h3 className="text-2xl font-bold text-white mb-2">Your Score: {score}%</h3>
 
-            <p className={`text-lg mb-6 ${
-              score >= quiz.requiredScore
-                ? 'text-green-400'
-                : 'text-red-400'
-            }`}>
-              {score >= quiz.requiredScore
+            <p
+              className={`text-lg mb-6 ${
+                score >= (quiz.requiredScore || 0) ? 'text-green-400' : 'text-red-400'
+              }`}
+            >
+              {score >= (quiz.requiredScore || 0)
                 ? 'Congratulations! You passed the quiz!'
                 : `Required score: ${quiz.requiredScore}%. Try again!`}
             </p>
@@ -130,9 +130,9 @@ const QuizModal = ({ quiz, onClose, onSubmit }) => {
                 onClick={onClose}
                 className="px-6 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600"
               >
-                {score >= quiz.requiredScore ? 'Continue' : 'Close'}
+                {score >= (quiz.requiredScore || 0) ? 'Continue' : 'Close'}
               </button>
-              {score < quiz.requiredScore && (
+              {score < (quiz.requiredScore || 0) && (
                 <button
                   onClick={() => {
                     setAnswers({});
