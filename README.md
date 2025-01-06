@@ -7,7 +7,7 @@ EduQuest aims to revolutionize education by democratizing access to quality lear
 We believe that by tokenizing educational achievements and creating a learn-to-earn model, we can bridge the gap between education and real-world value. Our platform empowers learners to take control of their educational journey while building a verifiable portfolio of skills through NFTs.
 
 ## About Me
-
+Hello. I am Bilal Kaya, a third-year Software Engineering student at Beykoz University, studying on a full scholarship. With skills in C++, C#, Python, OOP, and web development frameworks like Django, I have built several projects, including a Bakery-Cafe Management System and a Fitness Center Management System. I am also proficient in developing RESTful APIs and working with SQL databases. I participated in several RiseIn  Bootcamps, where I deepened my knowledge of modern technologies and blockchain development. My goal is to build innovative, impactful solutions in the tech industry.
 
 ## About The Project
 EduQuest is an innovative Learn-to-Earn education platform that combines blockchain technology with AI-powered personalized learning experiences. Built on the Educhain network, it revolutionizes online education by integrating YouTube content as curated learning materials with blockchain rewards and gamification.
