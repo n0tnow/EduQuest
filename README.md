@@ -12,30 +12,30 @@ EduQuest is an innovative Learn-to-Earn education platform that combines blockch
 The platform creates personalized learning paths using AI, adapting to each student's progress, preferences, and learning style. As users complete courses, participate in quizzes, and contribute to the community, they earn NFTs and points that unlock premium content and tournament entries.
 Our unique YouTube-Based Learn-to-Earn model curates high-quality educational content from YouTube, organizing it into structured courses across different subjects and difficulty levels. This is combined with interactive quizzes, AI-driven progress tracking, and blockchain rewards to create an engaging educational ecosystem.
 
-##Key Features
+## Key Features
 
-###Personalized Learning
+### Personalized Learning
 AI-powered learning path recommendations
 Progress-based content adaptation
 Curated YouTube educational content
 Interactive quizzes and assessments
 Multi-level courses from primary to university
 
-###Blockchain Integration
+### Blockchain Integration
 NFT rewards for course completion
 Achievement-based NFT badges
 NFT-gated premium content access
 Web3 wallet integration (MetaMask)
 Token-based reward system
 
-###Tournament System
+### Tournament System
 Weekly team competitions
 Monthly individual tournaments
 Live leaderboards
 NFT prizes for winners
 Point-based entry system
 
-###Community Features
+### Community Features
 Knowledge sharing platform
 Peer learning opportunities
 Community challenges
