@@ -65,13 +65,15 @@ CORS_ALLOWED_ORIGINS=http://localhost:3000
 DATABASE_URL=postgresql://user:password@localhost:5432/eduquest`
 
 5.Set up environment variables for Frontend (.env.local):
+
 `NEXT_PUBLIC_API_URL=http://localhost:8000
 NEXT_PUBLIC_WEB3_PROVIDER=https://rpc.educhain.network
 NEXT_PUBLIC_CONTRACT_ADDRESS=0x...`
 
 6.Run the development servers
+"
 `Backend`
 `python manage.py runserver`
-
+"
 `Frontend`
 `npm run dev`
