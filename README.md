@@ -15,25 +15,25 @@ Our unique YouTube-Based Learn-to-Earn model curates high-quality educational co
 ## Key Features
 
 ### Personalized Learning
-AI-powered learning path recommendations
-Progress-based content adaptation
-Curated YouTube educational content
-Interactive quizzes and assessments
-Multi-level courses from primary to university
+AI-powered learning path recommendations <br/>
+Progress-based content adaptation <br/>
+Curated YouTube educational content <br/>
+Interactive quizzes and assessments <br/>
+Multi-level courses from primary to university <br/>
 
 ### Blockchain Integration
-NFT rewards for course completion
-Achievement-based NFT badges
-NFT-gated premium content access
-Web3 wallet integration (MetaMask)
-Token-based reward system
+NFT rewards for course completion <br/>
+Achievement-based NFT badges <br/>
+NFT-gated premium content access <br/>
+Web3 wallet integration (MetaMask) <br/>
+Token-based reward system <br/>
 
 ### Tournament System
-Weekly team competitions
-Monthly individual tournaments
-Live leaderboards
-NFT prizes for winners
-Point-based entry system
+Weekly team competitions <br/>
+Monthly individual tournaments <br/>
+Live leaderboards <br/>
+NFT prizes for winners <br/>
+Point-based entry system <br/>
 
 ### Community Features
 Knowledge sharing platform
