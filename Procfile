@@ -1,1 +1,1 @@
-web: chdir backend eduquest_backend.wsgi:application
+web: cd backend eduquest_backend.wsgi:application
