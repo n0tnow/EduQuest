@@ -71,9 +71,9 @@ NEXT_PUBLIC_WEB3_PROVIDER=https://rpc.educhain.network
 NEXT_PUBLIC_CONTRACT_ADDRESS=0x...`
 
 6.Run the development servers
-"
+
 `Backend`
 `python manage.py runserver`
-"
+
 `Frontend`
 `npm run dev`
