@@ -36,11 +36,11 @@ NFT prizes for winners <br/>
 Point-based entry system <br/>
 
 ### Community Features
-Knowledge sharing platform
-Peer learning opportunities
-Community challenges
-Contribution rewards
-Discussion forums
+Knowledge sharing platform <br/>
+Peer learning opportunities <br/>
+Community challenges <br/>
+Contribution rewards <br/>
+Discussion forums <br/>
 
 ## Installation
 
