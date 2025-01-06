@@ -6,6 +6,8 @@
 EduQuest aims to revolutionize education by democratizing access to quality learning through blockchain technology. Our vision is to create a global educational ecosystem where learning is not just accessible but also rewarding. By combining AI-powered personalization with blockchain incentives, we're building a platform where students from any background can access quality education, earn while they learn, and be rewarded for their achievements.
 We believe that by tokenizing educational achievements and creating a learn-to-earn model, we can bridge the gap between education and real-world value. Our platform empowers learners to take control of their educational journey while building a verifiable portfolio of skills through NFTs.
 
+## About Me
+
 
 ## About The Project
 EduQuest is an innovative Learn-to-Earn education platform that combines blockchain technology with AI-powered personalized learning experiences. Built on the Educhain network, it revolutionizes online education by integrating YouTube content as curated learning materials with blockchain rewards and gamification.
