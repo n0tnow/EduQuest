@@ -27,6 +27,8 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = 'users.User'
 
+ROOT_URLCONF = 'eduquest_backend.urls'
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -61,10 +63,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
-
-
-ROOT_URLCONF = 'eduquest_backend.urls'
 
 TEMPLATES = [
     {
