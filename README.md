@@ -44,36 +44,36 @@ Discussion forums
 
 ## Installation
 
-1.Clone the repository
-`git clone https://github.com/yourusername/EduQuest.git`
-`cd EduQuest`
+1.Clone the repository <br/>
+`git clone https://github.com/yourusername/EduQuest.git` <br/>
+`cd EduQuest` <br/>
 
-2.Install backend dependencies
-`cd backend`
-`pip install -r requirements.txt`
-`python manage.py migrate`
+2.Install backend dependencies<br/>
+`cd backend`<br/>
+`pip install -r requirements.txt`<br/>
+`python manage.py migrate`<br/>
 
-3.Install frontend dependencies
-`cd frontend`
-`npm install`
+3.Install frontend dependencies<br/>
+`cd frontend`<br/>
+`npm install`<br/>
 
-4.Set up environment variables for Backend (.env):
-`DEBUG=True
-SECRET_KEY=your_secret_key
-ALLOWED_HOSTS=localhost,127.0.0.1
-CORS_ALLOWED_ORIGINS=http://localhost:3000
-DATABASE_URL=postgresql://user:password@localhost:5432/eduquest`
+4.Set up environment variables for Backend (.env):<br/>
+`DEBUG=True` <br/>
+`SECRET_KEY=your_secret_key` <br/>
+`ALLOWED_HOSTS=localhost,127.0.0.1` <br/>
+`CORS_ALLOWED_ORIGINS=http://localhost:3000`  <br/>
+`DATABASE_URL=postgresql://user:password@localhost:5432/eduquest` <br/>
 
-5.Set up environment variables for Frontend (.env.local):
+5.Set up environment variables for Frontend (.env.local): <br/>
 
-`NEXT_PUBLIC_API_URL=http://localhost:8000
-NEXT_PUBLIC_WEB3_PROVIDER=https://rpc.educhain.network
-NEXT_PUBLIC_CONTRACT_ADDRESS=0x...`
+`NEXT_PUBLIC_API_URL=http://localhost:8000` <br/>
+`NEXT_PUBLIC_WEB3_PROVIDER=https://rpc.educhain.network` <br/>
+`NEXT_PUBLIC_CONTRACT_ADDRESS=0x...` <br/>
 
-6.Run the development servers
+6.Run the development servers <br/>
 
-`Backend`
-`python manage.py runserver`
+Backend <br/>
+`python manage.py runserver` <br/>
 
-`Frontend`
-`npm run dev`
+Frontend <br/>
+`npm run dev` <br/>
