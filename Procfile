@@ -1,1 +1,1 @@
-web:eduquest_backend.wsgi:application
+web: eduquest_backend.wsgi:application
