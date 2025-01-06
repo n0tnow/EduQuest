@@ -1,1 +1,1 @@
-web: pip install -r requirements.txt && gunicorn --chdir backend eduquest_backend.wsgi:application
+web:  --chdir backend eduquest_backend.wsgi:application
