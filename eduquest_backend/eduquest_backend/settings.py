@@ -134,10 +134,11 @@ REST_FRAMEWORK = {
 }
 # CORS settings
 
+PORT = int(os.getenv('PORT', 8000))
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "http://localhost:8000"
+    "https://edu-quest-seven.vercel.app"
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True  # Only for development
